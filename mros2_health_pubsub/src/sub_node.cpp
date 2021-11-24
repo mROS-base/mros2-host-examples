@@ -17,7 +17,7 @@ public:
   }
 
 private:
-  void topic_callback(const health_msgs::msg::Health::SharedPtr msg) const
+  void topic_callback(const health_msgs::msg::Health::SharedPtr message) const
   {
     RCLCPP_INFO(this->get_logger(), "Subscribed msg: { name: %s, height: %d cm, weight: %f kg }", message->name.c_str(), message->height, message.weight);
   }
