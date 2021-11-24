@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(custom_pubsub)
+project(mros2_health_pubsub)
 
 
 # Default to C99
