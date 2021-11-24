@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(mros2_custom_pubsub)
+project(custom_pubsub)
 
 
 # Default to C99
