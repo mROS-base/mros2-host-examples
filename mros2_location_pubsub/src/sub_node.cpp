@@ -19,7 +19,7 @@ public:
 private:
   void topic_callback(const location_msgs::msg::Location::SharedPtr message) const
   {
-    RCLCPP_INFO(this->get_logger(), "Subscribed msg: { x: %d, y: %d, z: %d }", message->location[0],message->location[1], message->location[2]);
+    RCLCPP_INFO(this->get_logger(), "Subscribed msg: { x: %u, y: %u, z: %u }", message->x,message->y, message->z);
   }
   rclcpp::Subscription<location_msgs::msg::Location>::SharedPtr subscriber_;
 };

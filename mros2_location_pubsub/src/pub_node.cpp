@@ -25,11 +25,10 @@ private:
   void timer_callback()
   {
     auto message = location_msgs::msg::Location();
-    message.location = {0, 0, 0};
-    message.location[0] = count_++;
-    message.location[1] = 2*count_++;
-    message.location[2] = 3*count_++;
-    RCLCPP_INFO(this->get_logger(), "Publishing msg: { x: %d, y: %d, z: %d }", message.location[0],message.location[1], message.location[2]);
+    message.x = count_++;
+    message.y = 2*count_++;
+    message.z = 3*count_++;
+    RCLCPP_INFO(this->get_logger(), "Publishing msg: { x: %u, y: %u, z: %u }", message.x,message.y, message.z);
     publisher_->publish(message);
   }
   rclcpp::TimerBase::SharedPtr timer_;
