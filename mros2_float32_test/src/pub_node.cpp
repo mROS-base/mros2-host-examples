@@ -25,7 +25,7 @@ private:
   void timer_callback()
   {
     auto message = std_msgs::msg::Float32();
-    message.data = count_++/10.0;
+    message.data = (count_++)/10.0;
     RCLCPP_INFO(this->get_logger(), "Publishing msg: %f", message.data);
     publisher_->publish(message);
   }
