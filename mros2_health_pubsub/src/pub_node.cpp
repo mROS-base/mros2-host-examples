@@ -18,7 +18,7 @@ public:
     : Node("pub_mros2"), count_(0)
   {
     publisher_ = this->create_publisher<health_msgs::msg::Health>("to_stm", 10);
-    timer_ = this->create_wall_timer(5000ms, std::bind(&Publisher::timer_callback, this));
+    timer_ = this->create_wall_timer(1000ms, std::bind(&Publisher::timer_callback, this));
   }
 
 private:
