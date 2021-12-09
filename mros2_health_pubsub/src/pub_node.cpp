@@ -27,7 +27,7 @@ private:
     auto message = health_msgs::msg::Health();
     message.name = std::to_string(count_++);
     message.height = 170;
-    message.weight = 64.5;
+    message.weight = 63.5;
     RCLCPP_INFO(this->get_logger(), "Publishing msg: { name: '%s', height: %d cm, weight: %f kg }", message.name.c_str(), message.height, message.weight);
     publisher_->publish(message);
   }
