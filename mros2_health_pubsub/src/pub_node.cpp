@@ -25,7 +25,7 @@ private:
   void timer_callback()
   {
     auto message = health_msgs::msg::Health();
-    message.name = std::to_string(count_++);
+    message.name = "Hibara"; //std::to_string(count_++);
     message.height = 170;
     message.weight = 63.5;
     RCLCPP_INFO(this->get_logger(), "Publishing msg: { name: 'Hibara', height: %u cm, weight: %f kg }", message.height, message.weight);
