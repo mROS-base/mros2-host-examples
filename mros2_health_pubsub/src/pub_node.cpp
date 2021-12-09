@@ -28,7 +28,7 @@ private:
     message.name = std::to_string(count_++);
     message.height = 170;
     message.weight = 63.5;
-    RCLCPP_INFO(this->get_logger(), "Publishing msg: { name: '%s', height: %d cm, weight: %f kg }", message.name.c_str(), message.height, message.weight);
+    RCLCPP_INFO(this->get_logger(), "Publishing msg: { name: '%s', height: %u cm, weight: %f kg }", message.name.c_str(), message.height, message.weight);
     publisher_->publish(message);
   }
   rclcpp::TimerBase::SharedPtr timer_;
