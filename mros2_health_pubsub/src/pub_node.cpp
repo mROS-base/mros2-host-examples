@@ -15,7 +15,7 @@ class Publisher : public rclcpp::Node
 {
 public:
   Publisher()
-    : Node("pub_mros2"), count_(999990)
+    : Node("pub_mros2"), count_(1000000)
   {
     publisher_ = this->create_publisher<health_msgs::msg::Health>("to_stm", 10);
     timer_ = this->create_wall_timer(1000ms, std::bind(&Publisher::timer_callback, this));
