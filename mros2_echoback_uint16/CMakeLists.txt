@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(mros2_int16_test)
+project(mros2_echoback_uint16)
 
 
 # Default to C99
