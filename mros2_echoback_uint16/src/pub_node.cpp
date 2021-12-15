@@ -4,7 +4,7 @@
 #include <string>
 
 #include "rclcpp/rclcpp.hpp"
-#include "std_msgs/msg/int16.hpp"
+#include "std_msgs/msg/u_int16.hpp"
 
 using namespace std::chrono_literals;
 
@@ -17,20 +17,20 @@ public:
   Publisher()
     : Node("pub_mros2"), count_(0)
   {
-    publisher_ = this->create_publisher<std_msgs::msg::Int16>("to_stm", 10);
+    publisher_ = this->create_publisher<std_msgs::msg::UInt16>("to_stm", 10);
     timer_ = this->create_wall_timer(1000ms, std::bind(&Publisher::timer_callback, this));
   }
 
 private:
   void timer_callback()
   {
-    auto message = std_msgs::msg::Int16();
+    auto message = std_msgs::msg::UInt16();
     message.data = count_++;
-    RCLCPP_INFO(this->get_logger(), "Publishing msg: %d", message.data);
+    RCLCPP_INFO(this->get_logger(), "Publishing msg: %u", message.data);
     publisher_->publish(message);
   }
   rclcpp::TimerBase::SharedPtr timer_;
-  rclcpp::Publisher<std_msgs::msg::Int16>::SharedPtr publisher_;
+  rclcpp::Publisher<std_msgs::msg::UInt16>::SharedPtr publisher_;
   size_t count_;
 };
 
