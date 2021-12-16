@@ -17,14 +17,14 @@ public:
   Publisher()
       : Node("pub_mros2"), count_(0)
   {
-    publisher_ = this->create_publisher<location_msgs::msg::FloatLocation>("to_stm", 10);
+    publisher_ = this->create_publisher<float_location_msgs::msg::FloatLocation>("to_stm", 10);
     timer_ = this->create_wall_timer(1000ms, std::bind(&Publisher::timer_callback, this));
   }
 
 private:
   void timer_callback()
   {
-    auto message = location_msgs::msg::FloatLocation();
+    auto message = float_location_msgs::msg::FloatLocation();
     message.x = count_++/10.0;
     message.y = 2*count_++/10.0;
     message.z = 3*count_++/10.0;
@@ -32,7 +32,7 @@ private:
     publisher_->publish(message);
   }
   rclcpp::TimerBase::SharedPtr timer_;
-  rclcpp::Publisher<location_msgs::msg::FloatLocation>::SharedPtr publisher_;
+  rclcpp::Publisher<float_location_msgs::msg::FloatLocation>::SharedPtr publisher_;
   size_t count_;
 };
 
