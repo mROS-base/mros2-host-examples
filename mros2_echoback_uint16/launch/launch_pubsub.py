@@ -6,16 +6,16 @@ def generate_launch_description():
   return LaunchDescription([
     Node(
       package='mros2_echoback_uint16',
-      node_executable='pub_node',
-      node_name='pub_mros2',
-			prefix=['stdbuf -o L'],
-			output="screen"
+      executable='pub_node',
+      name='pub_mros2',
+      prefix=['stdbuf -o L'],
+      output="screen"
     ),
     Node(
       package='mros2_echoback_uint16',
-      node_executable='sub_node',
-      node_name='mros2_sub',
-			prefix=['stdbuf -o L'],
-			output="screen"
+      executable='sub_node',
+      name='mros2_sub',
+      prefix=['stdbuf -o L'],
+      output="screen"
     )
   ])
