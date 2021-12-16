@@ -4,7 +4,7 @@
 #include <string>
 
 #include "rclcpp/rclcpp.hpp"
-#include "location_msgs/msg/floatlocation.hpp"
+#include "float_location_msgs/msg/float_location.hpp"
 
 using std::placeholders::_1;
 
