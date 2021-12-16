@@ -31,7 +31,7 @@ private:
   }
   rclcpp::TimerBase::SharedPtr timer_;
   rclcpp::Publisher<std_msgs::msg::UInt16>::SharedPtr publisher_;
-  size_t count_;
+  uint16_t count_;
 };
 
 int main(int argc, char * argv[])

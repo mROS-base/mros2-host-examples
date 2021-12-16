@@ -15,7 +15,7 @@ class Publisher : public rclcpp::Node
 {
 public:
   Publisher()
-    : Node("pub_mros2"), count_(0)
+    : Node("pub_mros2"), count_(-3.50)
   {
     publisher_ = this->create_publisher<std_msgs::msg::Float32>("to_stm", 10);
     timer_ = this->create_wall_timer(1000ms, std::bind(&Publisher::timer_callback, this));
@@ -31,7 +31,7 @@ private:
   }
   rclcpp::TimerBase::SharedPtr timer_;
   rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr publisher_;
-  size_t count_;
+  float count_;
 };
 
 int main(int argc, char * argv[])
