@@ -4,7 +4,7 @@
 #include <string>
 
 #include "rclcpp/rclcpp.hpp"
-#include "std_msgs/msg/float32.hpp"
+#include "float_location_msgs/msg/float_location.hpp"
 
 using namespace std::chrono_literals;
 
@@ -15,26 +15,28 @@ class Publisher : public rclcpp::Node
 {
 public:
   Publisher()
-    : Node("pub_mros2"), count_(-3.50)
+      : Node("pub_mros2"), count_(0)
   {
-    publisher_ = this->create_publisher<std_msgs::msg::Float32>("to_stm", 10);
+    publisher_ = this->create_publisher<float_location_msgs::msg::FloatLocation>("to_stm", 10);
     timer_ = this->create_wall_timer(1000ms, std::bind(&Publisher::timer_callback, this));
   }
 
 private:
   void timer_callback()
   {
-    auto message = std_msgs::msg::Float32();
-    message.data = (count_++)/10.0;
-    RCLCPP_INFO(this->get_logger(), "Publishing msg: %f", message.data);
+    auto message = float_location_msgs::msg::FloatLocation();
+    message.x = count_++/10.0;
+    message.y = 2*count_++/10.0;
+    message.z = 3*count_++/10.0;
+    RCLCPP_INFO(this->get_logger(), "Publishing msg: { x: %f, y: %f, z: %f }", message.x,message.y, message.z);
     publisher_->publish(message);
   }
   rclcpp::TimerBase::SharedPtr timer_;
-  rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr publisher_;
-  float count_;
+  rclcpp::Publisher<float_location_msgs::msg::FloatLocation>::SharedPtr publisher_;
+  size_t count_;
 };
 
-int main(int argc, char * argv[])
+int main(int argc, char *argv[])
 {
   rclcpp::init(argc, argv);
   rclcpp::spin(std::make_shared<Publisher>());
