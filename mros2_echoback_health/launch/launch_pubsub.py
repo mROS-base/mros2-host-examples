@@ -5,14 +5,14 @@ from launch_ros.actions import Node
 def generate_launch_description():
   return LaunchDescription([
     Node(
-      package='mros2_float_location_pubsub',
+      package='mros2_echoback_health',
       node_executable='pub_node',
       node_name='pub_mros2',
 			prefix=['stdbuf -o L'],
 			output="screen"
     ),
     Node(
-      package='mros2_float_location_pubsub',
+      package='mros2_echoback_health',
       node_executable='sub_node',
       node_name='mros2_sub',
 			prefix=['stdbuf -o L'],
