@@ -25,8 +25,8 @@ private:
   void timer_callback()
   {
     auto message = test_msgs::msg::WStrings();
-    message.data = u"Hello, world! ";
-    RCLCPP_INFO(this->get_logger(), "Publishing msg: '%ls'", message.data.c_str());
+    message.wstring_value = u"Hello, world! ";
+    RCLCPP_INFO(this->get_logger(), "Publishing msg: '%ls'", message.wstring_value);
     publisher_->publish(message);
   }
   rclcpp::TimerBase::SharedPtr timer_;

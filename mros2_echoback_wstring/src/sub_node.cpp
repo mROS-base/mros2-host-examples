@@ -19,7 +19,7 @@ public:
 private:
   void topic_callback(const test_msgs::msg::WStrings::SharedPtr msg) const
   {
-    RCLCPP_INFO(this->get_logger(), "Subscribed msg: '%ls'", msg->data.c_str());
+    RCLCPP_INFO(this->get_logger(), "Subscribed msg: '%ls'", msg->wstring_value);
   }
   rclcpp::Subscription<test_msgs::msg::WStrings>::SharedPtr subscriber_;
 };
