@@ -19,7 +19,7 @@ public:
 private:
   void topic_callback(const std_msgs::msg::UInt16::SharedPtr msg) const
   {
-    RCLCPP_INFO(this->get_logger(), "Subscribed msg: %u", msg->data);
+    RCLCPP_INFO(this->get_logger(), "Subscribed msg: '%u'", msg->data);
   }
   rclcpp::Subscription<std_msgs::msg::UInt16>::SharedPtr subscriber_;
 };

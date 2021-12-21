@@ -19,7 +19,7 @@ public:
 private:
   void topic_callback(const std_msgs::msg::Float32::SharedPtr msg) const
   {
-    RCLCPP_INFO(this->get_logger(), "Subscribed msg: %f", msg->data);
+    RCLCPP_INFO(this->get_logger(), "Subscribed msg: '%.4f'", msg->data);
   }
   rclcpp::Subscription<std_msgs::msg::Float32>::SharedPtr subscriber_;
 };
