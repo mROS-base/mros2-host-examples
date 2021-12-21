@@ -26,7 +26,7 @@ private:
   {
     auto message = std_msgs::msg::Float32();
     message.data = count_++/10.0;
-    RCLCPP_INFO(this->get_logger(), "Publishing msg: %f", message.data);
+    RCLCPP_INFO(this->get_logger(), "Publishing msg: '%.4f'", message.data);
     publisher_->publish(message);
   }
   rclcpp::TimerBase::SharedPtr timer_;
