@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(mros2_echoback_float_location)
+project(mros2_echoback_mix)
 
 
 # Default to C99
@@ -19,16 +19,16 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
-find_package(float_location_msgs REQUIRED)
+find_package(mix_msgs REQUIRED)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
 add_executable(pub_node src/pub_node.cpp)
-ament_target_dependencies(pub_node rclcpp float_location_msgs)
+ament_target_dependencies(pub_node rclcpp mix_msgs)
 
 add_executable(sub_node src/sub_node.cpp)
-ament_target_dependencies(sub_node rclcpp float_location_msgs)
+ament_target_dependencies(sub_node rclcpp mix_msgs)
 
 target_include_directories(pub_node PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
