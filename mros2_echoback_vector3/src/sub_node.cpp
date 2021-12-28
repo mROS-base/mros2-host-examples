@@ -4,7 +4,7 @@
 #include <string>
 
 #include "rclcpp/rclcpp.hpp"
-#include "float_location_msgs/msg/float_location.hpp"
+#include "geometry_msgs/msg/vector3.hpp"
 
 using std::placeholders::_1;
 
@@ -13,15 +13,15 @@ class Subscriber : public rclcpp::Node
 public:
   Subscriber() : Node("mros2_sub")
   {
-    subscriber_ = this->create_subscription<float_location_msgs::msg::FloatLocation>("to_linux", rclcpp::QoS(10).best_effort(), std::bind(&Subscriber::topic_callback, this, _1));
+    subscriber_ = this->create_subscription<geometry_msgs::msg::Vector3>("to_linux", rclcpp::QoS(10).best_effort(), std::bind(&Subscriber::topic_callback, this, _1));
   }
 
 private:
-  void topic_callback(const float_location_msgs::msg::FloatLocation::SharedPtr message) const
+  void topic_callback(const geometry_msgs::msg::Vector3::SharedPtr message) const
   {
     RCLCPP_INFO(this->get_logger(), "Subscribed msg: { x: %f, y: %f, z: %f }", message->x,message->y, message->z);
   }
-  rclcpp::Subscription<float_location_msgs::msg::FloatLocation>::SharedPtr subscriber_;
+  rclcpp::Subscription<geometry_msgs::msg::Vector3>::SharedPtr subscriber_;
 };
 
 

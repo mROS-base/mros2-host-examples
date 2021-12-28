@@ -4,7 +4,7 @@
 #include <string>
 
 #include "rclcpp/rclcpp.hpp"
-#include "float_location_msgs/msg/float_location.hpp"
+#include "geometry_msgs/msg/vector3.hpp"
 
 using namespace std::chrono_literals;
 
@@ -17,14 +17,14 @@ public:
   Publisher()
       : Node("pub_mros2"), count_(0)
   {
-    publisher_ = this->create_publisher<float_location_msgs::msg::FloatLocation>("to_stm", 10);
+    publisher_ = this->create_publisher<geometry_msgs::msg::Vector3>("to_stm", 10);
     timer_ = this->create_wall_timer(1000ms, std::bind(&Publisher::timer_callback, this));
   }
 
 private:
   void timer_callback()
   {
-    auto message = float_location_msgs::msg::FloatLocation();
+    auto message = geometry_msgs::msg::Vector3();
     message.x = count_++/10.0;
     message.y = 2*count_++/10.0;
     message.z = 3*count_++/10.0;
@@ -32,7 +32,7 @@ private:
     publisher_->publish(message);
   }
   rclcpp::TimerBase::SharedPtr timer_;
-  rclcpp::Publisher<float_location_msgs::msg::FloatLocation>::SharedPtr publisher_;
+  rclcpp::Publisher<geometry_msgs::msg::Vector3>::SharedPtr publisher_;
   size_t count_;
 };
 
