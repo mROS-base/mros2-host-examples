@@ -26,6 +26,8 @@ private:
   {
     auto message = nav_msgs::msg::Odometry();
     message.header.stamp = this->get_clock()->now();
+    message.header.frame_id = "odometry";
+    message.child_frame_id = "child_odometry";
     for (int i=0;i<36;i++){
       message.pose.covariance[i]=(i/100.0);
     }
@@ -47,7 +49,7 @@ private:
     message.twist.twist.angular.y = count_++/100.0;
     message.twist.twist.angular.z = count_++/100.0;
     
-    RCLCPP_INFO(this->get_logger(), "Publishing msg: { sec:%d, nanosec:%u, frame_id:%s, child_frame_id:%s, pos_x:%f, ori_x:%f, pos_cov:%f, lin:%f, ang:%f, twi_cov:%f }", message.header.stamp.sec, message.header.stamp.nanosec, message.header.frame_id, message.child_frame_id, message.pose.pose.position.x, message.pose.pose.orientation.x,  message.pose.covariance[18], message.twist.twist.linear.x, message.twist.twist.angular.x, message.twist.covariance[18] );
+    RCLCPP_INFO(this->get_logger(), "Publishing msg: { sec:%d, nanosec:%u, frame_id:%s, child_frame_id:%s, pos_x:%f, ori_x:%f, pos_cov:%f, lin:%f, ang:%f, twi_cov:%f }", message.header.stamp.sec, message.header.stamp.nanosec, message.header.frame_id.c_str(), message.child_frame_id.c_str(), message.pose.pose.position.x, message.pose.pose.orientation.x,  message.pose.covariance[18], message.twist.twist.linear.x, message.twist.twist.angular.x, message.twist.covariance[18] );
     publisher_->publish(message);
   }
   rclcpp::TimerBase::SharedPtr timer_;

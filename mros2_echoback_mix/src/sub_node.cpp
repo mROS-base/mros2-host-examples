@@ -19,7 +19,7 @@ public:
 private:
   void topic_callback(const mix_msgs::msg::Mix::SharedPtr message) const
   {
-    RCLCPP_INFO(this->get_logger(), "Subscribed msg: { name: '%s', height: %d cm, weight: %f kg, array: {%u,%u,%u} }", message->name.c_str(), message->height, message->weight, message->array[0], message->array[1], message->array[2]);
+    RCLCPP_INFO(this->get_logger(), "Subscribed msg: { name: '%s', x: %u, y: %u, z: %u, height: %d cm, weight: %f kg, array: {%f,%f,%f} }", message->name.c_str(), message->vec3.x, message->vec3.y, message->vec3.z, message->height, message->weight, message->array[0], message->array[1], message->array[2]);
   }
   rclcpp::Subscription<mix_msgs::msg::Mix>::SharedPtr subscriber_;
 };
