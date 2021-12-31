@@ -39,7 +39,7 @@ private:
     for (int i=0;i<3;i++){
       message.effort.push_back(count_++/20.0);
     }
-    RCLCPP_INFO(this->get_logger(), "Publishing msg: { frame_id: '%s', sec: %d, nanosec: %u, name: { %s, %s, %s }, position: { x: %f, y: %f, z: %f }, velocity: { x: %f, y: %f, z: %f }, effort: { x: %f, y: %f, z: %f } }", message.header.frame_id.c_str(), message.header.stamp.sec, message.header.stamp.nanosec, message.name[0], message.name[1], message.name[2], message.position[0], message.position[1], message.position[2], message.velocity[0], message.velocity[1], message.velocity[2], message.effort[0], message.effort[1], message.effort[2] );
+    RCLCPP_INFO(this->get_logger(), "Publishing msg: { frame_id: '%s', sec: %d, nanosec: %u, name: { %s, %s, %s }, position: { x: %f, y: %f, z: %f }, velocity: { x: %f, y: %f, z: %f }, effort: { x: %f, y: %f, z: %f } }", message.header.frame_id.c_str(), message.header.stamp.sec, message.header.stamp.nanosec, message.name[0].c_str(), message.name[1].c_str(), message.name[2].c_str(), message.position[0], message.position[1], message.position[2], message.velocity[0], message.velocity[1], message.velocity[2], message.effort[0], message.effort[1], message.effort[2] );
     publisher_->publish(message);
   }
   rclcpp::TimerBase::SharedPtr timer_;
