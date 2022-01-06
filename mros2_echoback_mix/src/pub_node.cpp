@@ -32,7 +32,7 @@ private:
     message.height = 170;
     message.weight = 63.5;
     for (int i=0;i<8;i++){
-      message.array.push_back(i/100.0);
+      message.array[i]=i/100.0;
     }
     RCLCPP_INFO(this->get_logger(), "Publishing msg: { name: '%s', x: %u, y: %u, z: %u,height: %u cm, weight: %f kg, array: {%f,%f,%f} }", message.name.c_str(), message.vec3.x, message.vec3.y, message.vec3.z, message.height, message.weight, message.array[0], message.array[1], message.array[2]);
     publisher_->publish(message);
