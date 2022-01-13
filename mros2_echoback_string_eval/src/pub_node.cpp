@@ -23,14 +23,15 @@ public:
   }
 
 private:
+  std::array<rclcpp::Time, 201> publogs;
   void timer_callback()
   {
-    if(count_ < 200){
+    if(count_ < 201){
       auto message = std_msgs::msg::String();
       message.data = "!";
       publogs[count_] = this->get_clock()->now();
       publisher_->publish(message);
-    } else if (count_ == 200){
+    } else if (count_ == 201){
       std::ofstream writing_file;
       std::string filename = "string_publog.txt";
       writing_file.open(filename, std::ios::out);
