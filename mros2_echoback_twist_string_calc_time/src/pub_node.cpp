@@ -24,10 +24,10 @@ public:
   }
 
 private:
-  std::array<rclcpp::Time, 200> publogs;
+  std::array<rclcpp::Time, 201> publogs;
   void timer_callback()
   {
-    if (count_ < 200){
+    if (count_ < 201){
       auto message = geometry_msgs::msg::Twist();
       auto converted_message = std_msgs::msg::String();
       publogs[count_] = this->get_clock()->now();      
@@ -39,8 +39,7 @@ private:
       message.angular.z = count_/50.0;
       converted_message.data = std::to_string(message.linear.x) + std::to_string(message.linear.y) + std::to_string(message.linear.z) + std::to_string(message.angular.x) + std::to_string(message.angular.y) + std::to_string(message.angular.z);
       publisher_->publish(converted_message);
-    } else if (count_ == 200) {
-      RCLCPP_INFO(this->get_logger(),"Finished 200 messages!!");
+    } else if (count_ == 201) {
       std::ofstream writing_file;
       std::string filename = "twist_string_publog.txt";
       writing_file.open(filename, std::ios::out);

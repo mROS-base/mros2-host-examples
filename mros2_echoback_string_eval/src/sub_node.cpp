@@ -5,12 +5,9 @@
 #include <fstream>
 
 #include "rclcpp/rclcpp.hpp"
-#include "geometry_msgs/msg/twist.hpp"
 #include "std_msgs/msg/string.hpp"
 
-
 using std::placeholders::_1;
-
 
 class Subscriber : public rclcpp::Node
 {
@@ -23,21 +20,17 @@ public:
 
 private:
   std::array<rclcpp::Time, 200> sublogs;
-  void topic_callback(const std_msgs::msg::String::SharedPtr message)
+  void topic_callback(const std_msgs::msg::String::SharedPtr msg) const
   {
+    rclcpp::Time now = this->get_clock()->now();
     if (count_ < 200){
-      auto reconverted_message = geometry_msgs::msg::Twist();
-      reconverted_message.linear.x = std::stod(message->data.substr(0,8));
-      reconverted_message.linear.y = std::stod(message->data.substr(8,8));
-      reconverted_message.linear.z = std::stod(message->data.substr(16,8));
-      reconverted_message.angular.x = std::stod(message->data.substr(24,8));
-      reconverted_message.angular.y = std::stod(message->data.substr(32,8));
-      reconverted_message.angular.z = std::stod(message->data.substr(40,8));
-      sublogs[count_] = this->get_clock()->now();
+      sublogs[count_] = now;
+      auto subscribed_message = std_msgs::msg::String();
+      subscribed_message = *msg;
       count_++;
     } else {
       std::ofstream writing_file;
-      std::string filename = "twist_string_sublog.txt";
+      std::string filename = "string_sublog.txt";
       writing_file.open(filename, std::ios::out);
       for (int i=0; i<200; i++){
         const std::string writing_text = std::to_string(sublogs[i].nanoseconds());
