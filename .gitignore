@@ -2,3 +2,5 @@ log/
 .vscode/
 build/
 install/
+git rm --cached -r mros2_echoback_joint_state
+git rm --cached -r mros2_echoback_odometry

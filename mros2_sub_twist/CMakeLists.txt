@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(mros2_echoback_twist)
+project(mros2_sub_twist)
 
 
 # Default to C99
@@ -24,22 +24,13 @@ find_package(geometry_msgs REQUIRED)
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
-add_executable(pub_node src/pub_node.cpp)
-ament_target_dependencies(pub_node rclcpp geometry_msgs)
-
 add_executable(sub_node src/sub_node.cpp)
 ament_target_dependencies(sub_node rclcpp geometry_msgs)
-
-target_include_directories(pub_node PUBLIC
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-  $<INSTALL_INTERFACE:include>)
 
 target_include_directories(sub_node PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>)
 
-install(TARGETS pub_node
-  DESTINATION lib/${PROJECT_NAME})
 install(TARGETS sub_node
   DESTINATION lib/${PROJECT_NAME})
 

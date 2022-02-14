@@ -11,9 +11,9 @@ using std::placeholders::_1;
 class Subscriber : public rclcpp::Node
 {
 public:
-  Subscriber() : Node("mros2_sub")
+  Subscriber() : Node("sub_twist")
   {
-    subscriber_ = this->create_subscription<geometry_msgs::msg::Twist>("to_linux", rclcpp::QoS(10).best_effort(), std::bind(&Subscriber::topic_callback, this, _1));
+    subscriber_ = this->create_subscription<geometry_msgs::msg::Twist>("cmd_vel", rclcpp::QoS(10).best_effort(), std::bind(&Subscriber::topic_callback, this, _1));
   }
 
 private:

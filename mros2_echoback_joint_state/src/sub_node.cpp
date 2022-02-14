@@ -19,7 +19,7 @@ public:
 private:
   void topic_callback(const sensor_msgs::msg::JointState::SharedPtr message) const
   {
-    RCLCPP_INFO(this->get_logger(), "Subscribed msg: { frame_id: '%s', sec: %d, nanosec: %u, name: { %s, %s, %s }, position: { x: %f, y: %f, z: %f }, velocity: { x: %f, y: %f, z: %f }, effort: { x: %f, y: %f, z: %f } }", message->header.frame_id.c_str(), message->header.stamp.sec, message->header.stamp.nanosec, message->name[0].c_str(), message->name[1].c_str(), message->name[2].c_str(), message->position[0], message->position[1], message->position[2], message->velocity[0], message->velocity[1], message->velocity[2], message->effort[0], message->effort[1], message->effort[2] );
+    RCLCPP_INFO(this->get_logger(), "Subscribed msg: { frame_id: '%s', sec: %d, nanosec: %u, name: { %s, %s }, position: { x: %f, y: %f }, velocity: { x: %f, y: %f }, effort: { x: %f, y: %f } }", message->header.frame_id.c_str(), message->header.stamp.sec, message->header.stamp.nanosec, message->name[0].c_str(), message->name[1].c_str(), message->position[0], message->position[1], message->velocity[0], message->velocity[1], message->effort[0], message->effort[1] );
   }
   rclcpp::Subscription<sensor_msgs::msg::JointState>::SharedPtr subscriber_;
 };
