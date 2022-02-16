@@ -41,7 +41,7 @@ Please also check [mROS-base/mros2-asp3-f767zi/workspace](https://github.com/mRO
 - mros2 application on the embedded device:
   - [pub_float32](https://github.com/mROS-base/mros2-asp3-f767zi/workspace/pub_float32)
 
-  ## mros2_pub_pose
+## mros2_pub_pose
 
 - Description:
   - The `pub_pose` node on the host publishes `Pose` (`geometry_msgs::msg::Pose`) message to `cmd_vel` topic.
