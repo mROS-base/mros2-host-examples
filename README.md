@@ -16,8 +16,6 @@ Please also check [mROS-base/mros2-asp3-f767zi/workspace](https://github.com/mRO
     - `$ ros2 run mros2_echoback_string sub_node`
 - mros2 application on the embedded device:
   - [echoreply_string](https://github.com/mROS-base/mros2-asp3-f767zi/workspace/echoreply_string)
-  - [pub_string](https://github.com/mROS-base/mros2-asp3-f767zi/workspace/pub_string)
-  - [sub_string](https://github.com/mROS-base/mros2-asp3-f767zi/workspace/sub_string)
 
 ## mros2_pub_uint16
 
