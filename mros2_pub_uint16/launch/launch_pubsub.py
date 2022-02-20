@@ -5,10 +5,10 @@ from launch_ros.actions import Node
 def generate_launch_description():
   return LaunchDescription([
     Node(
-      package='mros2_pub_uint16',
-      node_executable='pub_node',
-      node_name='pub_mros2',
-			prefix=['stdbuf -o L'],
-			output="screen"
+      package='mros2_echoback_uint16',
+      executable='pub_node',
+      name='pub_mros2',
+      prefix=['stdbuf -o L'],
+      output="screen"
     )
   ])
