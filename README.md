@@ -10,7 +10,7 @@ Please also check [mROS-base/mros2-asp3-f767zi/workspace](https://github.com/mRO
   - (The mros2 node on the embedded device will echoreply this message as it is.)
   - The `mros2_sub` node on the host subscribes `string` message from `/to_linux` topic.
 - Host operation:
-  - `$ ros2 launch mros2_echoback_string launch.py`
+  - `$ ros2 launch mros2_echoback_string pubsub.launch.py`
   - or, at two terminals:
     - `$ ros2 run mros2_echoback_string pub_node`
     - `$ ros2 run mros2_echoback_string sub_node`
