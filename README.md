@@ -3,6 +3,17 @@
 This repository contains ROS 2 packages that can communicate with [mros2](https://github.com/mROS-base/mros2), which is an agent-less and lightweight runtime environment for ROS 2 nodes onto embedded devices.  
 Please also check [mROS-base/mros2-asp3-f767zi/workspace](https://github.com/mROS-base/mros2-asp3-f767zi/tree/main/workspace) for more details about applications on the embedded device as an example.
 
+## mros2_echoreply_string
+
+- Description:
+  - (The mros2 node on the embedded device publishes `string` (`std_msgs::msg::String`) message to `/to_linux` topic.)
+  - The `mros2_echoreply` node on the host subscribes `string` (`std_msgs::msg::String`) message from `/to_linux` topic, and then its node publishes the message as it is to `/to_stm` topic.
+  - (The mros2 node on the embedded device will subscribes the message as the echoback.)
+- Host operation:
+  - `$ ros2 run mros2_echoreply_string echoreply_node`
+- mros2 application on the embedded device:
+  - [echoback_string](https://github.com/mROS-base/mros2-asp3-f767zi/tree/main/workspace/echoback_string)
+
 ## mros2_echoback_string
 
 - Description:
