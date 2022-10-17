@@ -2,7 +2,10 @@
 
 This repository contains ROS 2 packages that can communicate with [mros2](https://github.com/mROS-base/mros2), which is an agent-less and lightweight runtime environment for ROS 2 nodes onto embedded devices.
 
-Please also check [mROS-base/mros2-mbed/workspace](https://github.com/mROS-base/mros2-mbed/tree/main/workspace) or [mROS-base/mros2-mbed/workspace](https://github.com/mROS-base/mros2-mbed/tree/main/workspace) for more details about applications on the embedded device as an example.
+Please also check for more details about example applications on the embedded device.
+
+- [mROS-base/mros2-mbed#examples](https://github.com/mROS-base/mros2-mbed#examples)
+- [mROS-base/mros2-asp3-f767zi/workspace](https://github.com/mROS-base/mros2-asp3-f767zi/tree/main/workspace)
 
 ## mros2_echoreply_string
 
