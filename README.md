@@ -1,7 +1,8 @@
 # mros2-host-examples
 
-This repository contains ROS 2 packages that can communicate with [mros2](https://github.com/mROS-base/mros2), which is an agent-less and lightweight runtime environment for ROS 2 nodes onto embedded devices.  
-Please also check [mROS-base/mros2-asp3-f767zi/workspace](https://github.com/mROS-base/mros2-asp3-f767zi/tree/main/workspace) for more details about applications on the embedded device as an example.
+This repository contains ROS 2 packages that can communicate with [mros2](https://github.com/mROS-base/mros2), which is an agent-less and lightweight runtime environment for ROS 2 nodes onto embedded devices.
+
+Please also check [mROS-base/mros2-mbed/workspace](https://github.com/mROS-base/mros2-mbed/tree/main/workspace) or [mROS-base/mros2-mbed/workspace](https://github.com/mROS-base/mros2-mbed/tree/main/workspace) for more details about applications on the embedded device as an example.
 
 ## mros2_echoreply_string
 
@@ -12,7 +13,7 @@ Please also check [mROS-base/mros2-asp3-f767zi/workspace](https://github.com/mRO
 - Host operation:
   - `$ ros2 run mros2_echoreply_string echoreply_node`
 - mros2 application on the embedded device:
-  - [echoback_string](https://github.com/mROS-base/mros2-asp3-f767zi/tree/main/workspace/echoback_string)
+  - [echoback_string](https://github.com/mROS-base/mros2-mbed/tree/main/workspace/echoback_string)
 
 ## mros2_echoback_string
 
@@ -26,7 +27,7 @@ Please also check [mROS-base/mros2-asp3-f767zi/workspace](https://github.com/mRO
     - `$ ros2 run mros2_echoback_string pub_node`
     - `$ ros2 run mros2_echoback_string sub_node`
 - mros2 application on the embedded device:
-  - [echoreply_string](https://github.com/mROS-base/mros2-asp3-f767zi/tree/main/workspace/echoreply_string)
+  - [echoreply_string](https://github.com/mROS-base/mros2-mbed/tree/main/workspace/echoreply_string)
 
 ## mros2_sub_float32
 
@@ -36,7 +37,7 @@ Please also check [mROS-base/mros2-asp3-f767zi/workspace](https://github.com/mRO
   - `$ ros2 launch mros2_sub_float32 sub.launch.py`
   - or, `$ ros2 run mros2_sub_float32 sub_node`
 - mros2 application on the embedded device:
-  - [pub_float32](https://github.com/mROS-base/mros2-asp3-f767zi/tree/main/workspace/pub_float32)
+  - [pub_float32](https://github.com/mROS-base/mros2-mbed/tree/main/workspace/pub_float32)
 
 ## mros2_pub_uint16
 
@@ -46,7 +47,7 @@ Please also check [mROS-base/mros2-asp3-f767zi/workspace](https://github.com/mRO
   - `$ ros2 launch mros2_pub_uint16 pub.launch.py`
   - or, `$ ros2 run mros2_pub_uint16 pub_node`
 - mros2 application on the embedded device:
-  - [sub_uint16](https://github.com/mROS-base/mros2-asp3-f767zi/tree/main/workspace/sub_uint16)
+  - [sub_uint16](https://github.com/mROS-base/mros2-mbed/tree/main/workspace/sub_uint16)
 
 ## mros2_sub_twist
 
@@ -56,7 +57,7 @@ Please also check [mROS-base/mros2-asp3-f767zi/workspace](https://github.com/mRO
   - `$ ros2 launch mros2_sub_twist sub.launch.py`
   - or, `$ ros2 run mros2_sub_twist sub_node`
 - mros2 application on the embedded device:
-  - [pub_twist](https://github.com/mROS-base/mros2-asp3-f767zi/tree/main/workspace/pub_twist)
+  - [pub_twist](https://github.com/mROS-base/mros2-mbed/tree/main/workspace/pub_twist)
 
 ## mros2_pub_pose
 
@@ -66,4 +67,4 @@ Please also check [mROS-base/mros2-asp3-f767zi/workspace](https://github.com/mRO
   - `$ ros2 launch mros2_pub_pose launch.py`
   - or, `$ ros2 run mros2_pub_pose pub_node`
 - mros2 application on the embedded device:
-  - [sub_pose](https://github.com/mROS-base/mros2-asp3-f767zi/tree/main/workspace/sub_pose)
+  - [sub_pose](https://github.com/mROS-base/mros2-mbed/tree/main/workspace/sub_pose)
