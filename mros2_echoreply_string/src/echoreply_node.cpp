@@ -14,7 +14,7 @@ using std::placeholders::_1;
 class Echoreplyer : public rclcpp::Node
 {
 public:
-  Echoreplyer() : Node("mros2_echoreply")
+  Echoreplyer() : Node("mros2_echoreply_node")
   {
     publisher_ = this->create_publisher<std_msgs::msg::String>("to_stm", 10);
     subscriber_ = this->create_subscription<std_msgs::msg::String>("to_linux", rclcpp::QoS(10).best_effort(), std::bind(&Echoreplyer::topic_callback, this, _1));
@@ -23,8 +23,8 @@ public:
 private:
   void topic_callback(const std_msgs::msg::String::SharedPtr msg) const
   {
-    RCLCPP_INFO(this->get_logger(), "Subscribed msg: '%s'", msg->data.c_str());
-    RCLCPP_INFO(this->get_logger(), "Publishing msg: '%s'", msg->data.c_str());
+    RCLCPP_INFO(this->get_logger(), "\r\nSubscribed msg: '%s'", msg->data.c_str());
+    RCLCPP_INFO(this->get_logger(), "\r\nPublishing msg: '%s'", msg->data.c_str());
     publisher_->publish(*msg);
   }
   rclcpp::Publisher<std_msgs::msg::String>::SharedPtr publisher_;
