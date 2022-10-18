@@ -37,8 +37,8 @@ Please also check for more details about example applications on the embedded de
 - Description:
   - The `mros2_sub` node on the host subscribes `float32` (`std_msgs::msg::Float32`) message from `/to_linux` topic.
 - Host operation:
-  - `$ ros2 launch mros2_sub_float32 sub.launch.py`
-  - or, `$ ros2 run mros2_sub_float32 sub_node`
+  - `$ ros2 run mros2_sub_float32 sub_node`
+  - or, `$ ros2 launch mros2_sub_float32 sub.launch.py`
 - mros2 application on the embedded device:
   - [pub_float32](https://github.com/mROS-base/mros2-mbed/tree/main/workspace/pub_float32)
 
@@ -47,8 +47,8 @@ Please also check for more details about example applications on the embedded de
 - Description:
   - The `pub_mros2` node on the host publishes `uint16` (`std_msgs::msg::UInt16`) message to `/to_stm` topic.
 - Host operation:
-  - `$ ros2 launch mros2_pub_uint16 pub.launch.py`
-  - or, `$ ros2 run mros2_pub_uint16 pub_node`
+  - `$ ros2 run mros2_pub_uint16 pub_node`
+  - or, `$ ros2 launch mros2_pub_uint16 pub.launch.py`
 - mros2 application on the embedded device:
   - [sub_uint16](https://github.com/mROS-base/mros2-mbed/tree/main/workspace/sub_uint16)
 
@@ -57,8 +57,8 @@ Please also check for more details about example applications on the embedded de
 - Description:
   - The `sub_twist` node on the host subscribes `Twist` (`geometry_msgs::msg::Twist`) message from `/cmd_vel` topic.
 - Host operation:
-  - `$ ros2 launch mros2_sub_twist sub.launch.py`
-  - or, `$ ros2 run mros2_sub_twist sub_node`
+  - `$ ros2 run mros2_sub_twist sub_node`
+  - or, `$ ros2 launch mros2_sub_twist sub.launch.py`
 - mros2 application on the embedded device:
   - [pub_twist](https://github.com/mROS-base/mros2-mbed/tree/main/workspace/pub_twist)
 
@@ -67,7 +67,7 @@ Please also check for more details about example applications on the embedded de
 - Description:
   - The `pub_pose` node on the host publishes `Pose` (`geometry_msgs::msg::Pose`) message to `/cmd_vel` topic.
 - Host operation:
-  - `$ ros2 launch mros2_pub_pose launch.py`
-  - or, `$ ros2 run mros2_pub_pose pub_node`
+  - `$ ros2 run mros2_pub_pose pub_node`
+  - or, `$ ros2 launch mros2_pub_pose launch.py`
 - mros2 application on the embedded device:
   - [sub_pose](https://github.com/mROS-base/mros2-mbed/tree/main/workspace/sub_pose)
