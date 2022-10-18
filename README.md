@@ -25,10 +25,10 @@ Please also check for more details about example applications on the embedded de
   - (The mros2 node on the embedded device will echoreply this message as it is.)
   - The `mros2_sub` node on the host subscribes `string` message from `/to_linux` topic.
 - Host operation:
-  - `$ ros2 launch mros2_echoback_string pubsub.launch.py`
-  - or, at two terminals:
-    - `$ ros2 run mros2_echoback_string pub_node`
-    - `$ ros2 run mros2_echoback_string sub_node`
+  - at first terminal: `$ ros2 run mros2_echoback_string sub_node`
+  - and then, at second terminal: `$ ros2 run mros2_echoback_string pub_node`
+  - or, at one terminal:
+    - `$ ros2 launch mros2_echoback_string pubsub.launch.py`
 - mros2 application on the embedded device:
   - [echoreply_string](https://github.com/mROS-base/mros2-mbed/tree/main/workspace/echoreply_string)
 
