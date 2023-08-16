@@ -78,8 +78,8 @@ Please also check for more details about example applications on the embedded de
   - (The mros2 node on the embedded device publishes `string` (`std_msgs::msg::String`) message to `/to_linux` topic.)
   - The `sub_long_string_pub_crc` node on the host subscribes `string` (`geometry_msgs::msg::String`) message from `/to_linux` topic, and then its node publishes the CRC32 as a u_int32 (`std_msgs::msg::UInt32`) value to `/to_stm` topic.
 - Host operation:
-  - `$ ros2 run  mros2_sub_long_string_pub_crc sub_long_string_pub_crc_node.
+  - `$ ros2 run  mros2_sub_long_string_pub_crc sub_long_string_pub_crc_node`
   - or, `$ ros2 launch mros2_sub_long_string_pub_crc subpub.launch.py`
 - mros2 application on the embedded device:
-  - [sub_pose](https://github.com/mROS-base/mros2-mbed/tree/main/workspace/pub_long_string_sub_crc)
+  - [pub_long_string_sub_crc](https://github.com/mROS-base/mros2-mbed/tree/main/workspace/pub_long_string_sub_crc)
 
